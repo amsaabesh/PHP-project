@@ -1,36 +1,37 @@
+
 <?php
-$EPSILON = 0.01;
-function func($x) 
+//proshno: x^3-x^2+2
+$epsi = 0.01;
+function f($x) 
 { 
-    return $x * $x * $x -  
-           $x * $x + 2; 
+    return $x*$x*$x -  
+           $x*$x+2; 
 }
-function bisection($a, $b) 
+function bi($a, $b) 
 { 
-    global $EPSILON; 
-    if (func($a) *  
-        func($b) >= 0) 
+    global $epsi; 
+    if (f($a)*f($b) >= 0) 
     { 
-        echo "You have not assumed " .  
+        echo "kichu dhoren nai to..." .  
                  "right a and b","\n"; 
         return; 
     } 
   
     $c = $a; 
-    while (($b - $a) >= $EPSILON) 
+    while(($b - $a) >= $epsi) 
     {
-        $c = ($a + $b) / 2;
-        if (func($c) == 0.0) 
+        $c = ($a + $b) / 2;//মধ্যবিন্দু
+        if (f($c) == 0.0) //মিডেল পয়েন্ট চেক
             break;
-        else if (func($c) * func($a) < 0) 
+        else if (f($c) * f($a) < 0) 
             $b = $c; 
         else
             $a = $c; 
     } 
-    echo "The value of root is : " , $c; 
+    echo "Joe root: " , $c; 
 }
 $a =-200; 
 $b = 300; 
-bisection($a, $b);
+bi($a, $b);
 echo "<br/>code link in private comment";
 ?> 
