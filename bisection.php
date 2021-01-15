@@ -1,19 +1,16 @@
-
 <?php
 //proshno: x^3-x^2+2
 $epsi = 0.01;
 function f($x) 
 { 
-    return $x*$x*$x -  
-           $x*$x+2; 
+    return $x*$x*$x-$x*$x+2; 
 }
 function bi($a, $b) 
 { 
     global $epsi; 
     if (f($a)*f($b) >= 0) 
     { 
-        echo "kichu dhoren nai to..." .  
-                 "right a and b","\n"; 
+        echo "kichu dhoren nai to... right a and b <br/>"; 
         return; 
     } 
   
